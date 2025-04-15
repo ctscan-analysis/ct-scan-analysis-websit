@@ -1,0 +1,13 @@
+version: '3'
+services:
+  ct-scan-analysis:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./data:/app/data
+    restart: always
+    environment:
+      - FLASK_ENV=production
+      - SECRET_KEY=change_this_in_production
